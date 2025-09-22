@@ -550,6 +550,19 @@ def conn():
     c.row_factory = sqlite3.Row
     return c
 
+
+def table_has_column(db: sqlite3.Connection, table: str, column: str) -> bool:
+    """Return True if the given SQLite table contains ``column``."""
+    try:
+        info = db.execute(f"PRAGMA table_info({table})").fetchall()
+    except sqlite3.OperationalError:
+        return False
+    for row in info:
+        name = row["name"] if isinstance(row, sqlite3.Row) else row[1]
+        if name == column:
+            return True
+    return False
+
 def br_money(v):
     if v is None: v = 0
     return f"R$ {v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -786,16 +799,33 @@ def compute_graphs(ini,fim,categoria,cidade,vendedor,incluir_rma, top_metric):
         m_labels = [r["cat"] for r in mc]
         m_values = [round((r["lucro"]/r["receita"]*100) if r["receita"] else 0,2) for r in mc]
 
-        # Vendas por dia (com zeros)
-        r30 = c.execute(f"""
-          SELECT date(s.data) AS d, SUM(si.qtde*si.preco_unit) v
-          FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
+        # Lucro líquido por dia (com zeros para dias sem venda)
+        item_expense_expr = "0"
+        if table_has_column(c, "sale_items", "despesas_variaveis"):
+            item_expense_expr = "COALESCE(si.despesas_variaveis, 0)"
+        lucro_rows = c.execute(
+            f"""
+          SELECT date(s.data) AS dia,
+                 SUM(
+                     COALESCE(si.preco_unit, si.preco_lista_snap, p.preco_lista, 0)
+                     - COALESCE(si.custo_snap, p.custo_base, 0)
+                     - {item_expense_expr}
+                 ) AS lucro_liquido
+          FROM sale_items si
+          JOIN sales s ON s.id = si.sale_id
+          JOIN products p ON p.id = si.product_id
           WHERE date(s.data) BETWEEN ? AND ? AND ({where})
           GROUP BY date(s.data)
-        """, [ult30_ini.isoformat(), fim.isoformat(), *params]).fetchall()
-        mapa30 = {row["d"]: row["v"] for row in r30}
-        labels30 = [ (ult30_ini + datetime.timedelta(days=i)).isoformat() for i in range(30) ]
-        valores30 = [round(mapa30.get(d,0),2) for d in labels30]
+          ORDER BY dia
+        """,
+            [ult30_ini.isoformat(), fim.isoformat(), *params],
+        ).fetchall()
+        lucro_por_dia = {row["dia"]: float(row["lucro_liquido"] or 0) for row in lucro_rows}
+        labels30 = date_range_labels(ult30_ini, fim)
+        valores30 = [round(lucro_por_dia.get(d, 0.0), 2) for d in labels30]
+        vendas_por_dia_lucro = [
+            {"data": d, "lucro_liquido": valores30[idx]} for idx, d in enumerate(labels30)
+        ]
 
         # Cidades vendidas
         rows_cid = c.execute(f"""
@@ -811,6 +841,7 @@ def compute_graphs(ini,fim,categoria,cidade,vendedor,incluir_rma, top_metric):
             "categoria": {"labels": cat_labels, "values": cat_values},
             "margem_categoria": {"labels": m_labels, "values": m_values},
             "vendas_dia": {"labels": labels30, "values": valores30},
+            "vendas_por_dia_lucro": vendas_por_dia_lucro,
             "cidades": {"labels": cid_labels, "values": cid_values}
         }
 

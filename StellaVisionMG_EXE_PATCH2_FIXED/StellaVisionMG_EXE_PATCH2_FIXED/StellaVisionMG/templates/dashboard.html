@@ -85,6 +85,12 @@ async function fetchJSON(url){ const r = await fetch(url); return await r.json()
   const qs = {{ ('?' + request.query_string.decode())|tojson if request.query_string else '""' }};
   const charts = await fetchJSON("{{ url_for('api_graficos') }}" + qs);
 
+  const lucroDiarioApi = Array.isArray(charts.vendas_por_dia_lucro) ? charts.vendas_por_dia_lucro : [];
+  const lucroLabelsApi = lucroDiarioApi.map(item => item.data);
+  const lucroValuesApi = lucroDiarioApi.map(item => Number(item.lucro_liquido) || 0);
+  const vendasDiaLabelsFinal = lucroLabelsApi.length ? lucroLabelsApi : vendasDiaLabels;
+  const vendasDiaValuesFinal = lucroLabelsApi.length ? lucroValuesApi : vendasDiaValues;
+
   // ---------- TOP 10 ----------
   const ctx1 = document.getElementById('chartTop10');
   if (topMetric === 'faturamento' || topMetric === 'quantidade') {
@@ -112,7 +118,7 @@ async function fetchJSON(url){ const r = await fetch(url); return await r.json()
   const ctx4 = document.getElementById('chartVendasDia');
   new Chart(ctx4, {
     type: 'line',
-    data: { labels: vendasDiaLabels, datasets: [{ label: 'Lucro líquido diário (R$)', data: vendasDiaValues }] },
+    data: { labels: vendasDiaLabelsFinal, datasets: [{ label: 'Lucro líquido diário (R$)', data: vendasDiaValuesFinal }] },
     options: { responsive:true }
   });
 
