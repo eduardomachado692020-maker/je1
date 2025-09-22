@@ -77,22 +77,41 @@ async function fetchJSON(url){ const r = await fetch(url); return await r.json()
   const top10ValuesLL = {{ rows|map(attribute='lucro_liquido')|list|tojson }};
 
   // série diária (lucro líquido)
-  const vendasDiaLabels = {{ chart_labels|tojson }};
-  const vendasDiaValues = {{ chart_values|tojson }};
+  const vendasDiaLabelsServer = {{ chart_labels|tojson }};
+  const vendasDiaValuesServer = {{ chart_values|tojson }};
 
   // sempre buscamos os demais gráficos pela API; e
   // também usamos a API p/ Top10 quando top=faturamento|quantidade
   const qs = {{ ('?' + request.query_string.decode())|tojson if request.query_string else '""' }};
   const charts = await fetchJSON("{{ url_for('api_graficos') }}" + qs);
+  const top10FatData = Array.isArray(charts.top10_faturamento) ? charts.top10_faturamento : [];
+  const top10QtdData = Array.isArray(charts.top10_quantidade) ? charts.top10_quantidade : [];
+  const categoriaData = Array.isArray(charts.participacao_categoria) ? charts.participacao_categoria : [];
+  const margemData = Array.isArray(charts.margem_categoria_30d) ? charts.margem_categoria_30d : [];
+  const vendasLucroData = Array.isArray(charts.vendas_por_dia_lucro) ? charts.vendas_por_dia_lucro : [];
+  const cidadesData = Array.isArray(charts.cidades) ? charts.cidades : [];
 
   // ---------- TOP 10 ----------
   const ctx1 = document.getElementById('chartTop10');
-  if (topMetric === 'faturamento' || topMetric === 'quantidade') {
+  if (topMetric === 'faturamento') {
+    const labels = top10FatData.map(item => item.label);
+    const values = top10FatData.map(item => item.value);
     new Chart(ctx1, {
       type: 'bar',
       data: {
-        labels: charts.top10.labels,
-        datasets: [{ label: charts.top10.label, data: charts.top10.values }]
+        labels,
+        datasets: [{ label: 'Faturamento (R$)', data: values }]
+      },
+      options: { responsive:true, plugins:{ legend:{ display:false } } }
+    });
+  } else if (topMetric === 'quantidade') {
+    const labels = top10QtdData.map(item => item.label);
+    const values = top10QtdData.map(item => item.value);
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{ label: 'Quantidade', data: values }]
       },
       options: { responsive:true, plugins:{ legend:{ display:false } } }
     });
@@ -110,9 +129,15 @@ async function fetchJSON(url){ const r = await fetch(url); return await r.json()
 
   // ---------- Vendas por dia (lucro líquido) ----------
   const ctx4 = document.getElementById('chartVendasDia');
+  const vendasDiaSeries = vendasLucroData.length
+    ? vendasLucroData
+    : vendasDiaLabelsServer.map((label, idx) => ({ data: label, lucro: vendasDiaValuesServer[idx] || 0 }));
   new Chart(ctx4, {
     type: 'line',
-    data: { labels: vendasDiaLabels, datasets: [{ label: 'Lucro líquido diário (R$)', data: vendasDiaValues }] },
+    data: {
+      labels: vendasDiaSeries.map(item => item.data),
+      datasets: [{ label: 'Lucro líquido diário (R$)', data: vendasDiaSeries.map(item => item.lucro) }]
+    },
     options: { responsive:true }
   });
 
@@ -120,21 +145,30 @@ async function fetchJSON(url){ const r = await fetch(url); return await r.json()
   const ctx2 = document.getElementById('chartPieCategoria');
   new Chart(ctx2, {
     type: 'pie',
-    data: { labels: charts.categoria.labels, datasets: [{ data: charts.categoria.values }] },
+    data: {
+      labels: categoriaData.map(item => item.categoria),
+      datasets: [{ data: categoriaData.map(item => item.faturamento) }]
+    },
     options: { responsive:true }
   });
 
   const ctx3 = document.getElementById('chartMargemCategoria');
   new Chart(ctx3, {
     type: 'bar',
-    data: { labels: charts.margem_categoria.labels, datasets: [{ label: 'Margem %', data: charts.margem_categoria.values }] },
+    data: {
+      labels: margemData.map(item => item.categoria),
+      datasets: [{ label: 'Margem %', data: margemData.map(item => item.margem) }]
+    },
     options: { responsive:true, plugins:{ legend:{ display:false } } }
   });
 
   const ctx5 = document.getElementById('chartCidades');
   new Chart(ctx5, {
     type: 'bar',
-    data: { labels: charts.cidades.labels, datasets: [{ label: 'Faturamento (R$)', data: charts.cidades.values }] },
+    data: {
+      labels: cidadesData.map(item => item.cidade),
+      datasets: [{ label: 'Faturamento (R$)', data: cidadesData.map(item => item.faturamento) }]
+    },
     options: { indexAxis: 'y', responsive:true, plugins:{ legend:{ display:false } } }
   });
 })();
