@@ -741,77 +741,139 @@ def compute_kpis(ini, fim, categoria, cidade, vendedor, incluir_rma):
         }
         return kpis
 
-def compute_graphs(ini,fim,categoria,cidade,vendedor,incluir_rma, top_metric):
+def compute_graphs(ini, fim, categoria, cidade, vendedor, incluir_rma):
     with conn() as c:
-        where, params = apply_filters_where(ini,fim,categoria,cidade,vendedor)
+        where, params = apply_filters_where(ini, fim, categoria, cidade, vendedor)
 
-        # Top 10 por faturamento/quantidade
-        if top_metric == "quantidade":
-            sql_top = f"""
-              SELECT p.nome AS label, SUM(si.qtde) v
-              FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-              WHERE {where} GROUP BY p.id ORDER BY v DESC LIMIT 10
-            """
-            label = "Quantidade"
-        else:
-            sql_top = f"""
-              SELECT p.nome AS label, SUM(si.qtde*si.preco_unit) v
-              FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-              WHERE {where} GROUP BY p.id ORDER BY v DESC LIMIT 10
-            """
-            label = "Faturamento (R$)"
-        top = c.execute(sql_top, params).fetchall()
-        top_labels = [r["label"] for r in top]
-        top_values = [round(r["v"] or 0,2) for r in top]
+        top_faturamento_rows = c.execute(
+            f"""
+              SELECT COALESCE(NULLIF(TRIM(p.nome), ''), '(sem nome)') AS label,
+                     SUM(si.qtde*si.preco_unit) AS valor
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE {where}
+              GROUP BY p.id
+              ORDER BY valor DESC
+              LIMIT 10
+            """,
+            params,
+        ).fetchall()
+        top10_faturamento = [
+            {"label": row["label"], "value": round(row["valor"] or 0, 2)}
+            for row in top_faturamento_rows
+        ]
 
-        # Pizza por categoria (inclui "Sem categoria")
-        pie = c.execute(f"""
-          SELECT COALESCE(p.categoria, 'Sem categoria') AS cat, SUM(si.qtde*si.preco_unit) v
-          FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-          WHERE {where} GROUP BY COALESCE(p.categoria, 'Sem categoria')
-        """, params).fetchall()
-        cat_labels = [r["cat"] for r in pie]
-        cat_values = [round(r["v"] or 0,2) for r in pie]
+        top_quantidade_rows = c.execute(
+            f"""
+              SELECT COALESCE(NULLIF(TRIM(p.nome), ''), '(sem nome)') AS label,
+                     SUM(si.qtde) AS quantidade
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE {where}
+              GROUP BY p.id
+              ORDER BY quantidade DESC
+              LIMIT 10
+            """,
+            params,
+        ).fetchall()
+        top10_quantidade = [
+            {"label": row["label"], "value": int(row["quantidade"] or 0)}
+            for row in top_quantidade_rows
+        ]
 
-        # Margem por categoria (últimos 30d, ignora custo nulo)
+        pie_rows = c.execute(
+            f"""
+              SELECT COALESCE(p.categoria, 'Sem categoria') AS categoria,
+                     SUM(si.qtde*si.preco_unit) AS faturamento
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE {where}
+              GROUP BY COALESCE(p.categoria, 'Sem categoria')
+            """,
+            params,
+        ).fetchall()
+        participacao_categoria = [
+            {
+                "categoria": row["categoria"],
+                "faturamento": round(row["faturamento"] or 0, 2),
+            }
+            for row in pie_rows
+        ]
+
         ult30_ini = fim - datetime.timedelta(days=29)
-        mc = c.execute(f"""
-          SELECT COALESCE(p.categoria,'Sem categoria') AS cat,
-                 SUM(CASE WHEN si.custo_snap>0 THEN (si.qtde*si.preco_unit - si.qtde*si.custo_snap) ELSE 0 END) lucro,
-                 SUM(CASE WHEN si.custo_snap>0 THEN (si.qtde*si.preco_unit) ELSE 0 END) receita
-          FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-          WHERE date(s.data) BETWEEN ? AND ? AND ({where})
-          GROUP BY COALESCE(p.categoria,'Sem categoria')
-        """, [ult30_ini.isoformat(), fim.isoformat(), *params]).fetchall()
-        m_labels = [r["cat"] for r in mc]
-        m_values = [round((r["lucro"]/r["receita"]*100) if r["receita"] else 0,2) for r in mc]
+        margem_rows = c.execute(
+            f"""
+              SELECT COALESCE(p.categoria,'Sem categoria') AS categoria,
+                     SUM(CASE WHEN si.custo_snap>0
+                              THEN (si.qtde*si.preco_unit - si.qtde*si.custo_snap)
+                              ELSE 0 END) AS lucro,
+                     SUM(CASE WHEN si.custo_snap>0
+                              THEN (si.qtde*si.preco_unit)
+                              ELSE 0 END) AS receita
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE date(s.data) BETWEEN ? AND ? AND ({where})
+              GROUP BY COALESCE(p.categoria,'Sem categoria')
+            """,
+            [ult30_ini.isoformat(), fim.isoformat(), *params],
+        ).fetchall()
+        margem_categoria_30d = []
+        for row in margem_rows:
+            receita = row["receita"] or 0
+            lucro = row["lucro"] or 0
+            margem = round(((lucro / receita) * 100) if receita else 0, 2)
+            margem_categoria_30d.append({"categoria": row["categoria"], "margem": margem})
 
-        # Vendas por dia (com zeros)
-        r30 = c.execute(f"""
-          SELECT date(s.data) AS d, SUM(si.qtde*si.preco_unit) v
-          FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-          WHERE date(s.data) BETWEEN ? AND ? AND ({where})
-          GROUP BY date(s.data)
-        """, [ult30_ini.isoformat(), fim.isoformat(), *params]).fetchall()
-        mapa30 = {row["d"]: row["v"] for row in r30}
-        labels30 = [ (ult30_ini + datetime.timedelta(days=i)).isoformat() for i in range(30) ]
-        valores30 = [round(mapa30.get(d,0),2) for d in labels30]
+        vendas_rows = c.execute(
+            f"""
+              SELECT date(s.data) AS dia,
+                     SUM((si.qtde*si.preco_unit) - (si.qtde*COALESCE(si.custo_snap, 0))) AS lucro
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE date(s.data) BETWEEN ? AND ? AND ({where})
+              GROUP BY date(s.data)
+            """,
+            [ult30_ini.isoformat(), fim.isoformat(), *params],
+        ).fetchall()
+        lucro_por_dia = {row["dia"]: row["lucro"] or 0 for row in vendas_rows}
+        labels30 = [
+            (ult30_ini + datetime.timedelta(days=i)).isoformat()
+            for i in range(30)
+        ]
+        vendas_por_dia_lucro = [
+            {"data": dia, "lucro": round(lucro_por_dia.get(dia, 0) or 0, 2)}
+            for dia in labels30
+        ]
 
-        # Cidades vendidas
-        rows_cid = c.execute(f"""
-          SELECT s.cidade_snapshot AS cid, SUM(si.qtde*si.preco_unit) v
-          FROM sale_items si JOIN sales s ON s.id=si.sale_id JOIN products p ON p.id=si.product_id
-          WHERE {where} GROUP BY s.cidade_snapshot
-        """, params).fetchall()
-        cid_labels = [ (r["cid"] or "(sem cidade)") for r in rows_cid ]
-        cid_values = [ round(r["v"] or 0,2) for r in rows_cid ]
+        cidades_rows = c.execute(
+            f"""
+              SELECT COALESCE(NULLIF(TRIM(s.cidade_snapshot), ''), '(sem cidade)') AS cidade,
+                     SUM(si.qtde*si.preco_unit) AS faturamento
+              FROM sale_items si
+              JOIN sales s ON s.id = si.sale_id
+              JOIN products p ON p.id = si.product_id
+              WHERE {where}
+              GROUP BY s.cidade_snapshot
+            """,
+            params,
+        ).fetchall()
+        cidades = [
+            {"cidade": row["cidade"], "faturamento": round(row["faturamento"] or 0, 2)}
+            for row in cidades_rows
+        ]
 
         return {
-            "top10": {"labels": top_labels, "values": top_values, "label": label},
-            "categoria": {"labels": cat_labels, "values": cat_values},
-            "margem_categoria": {"labels": m_labels, "values": m_values},
-            "vendas_dia": {"labels": labels30, "values": valores30},
-            "cidades": {"labels": cid_labels, "values": cid_values}
+            "top10_faturamento": top10_faturamento,
+            "top10_quantidade": top10_quantidade,
+            "participacao_categoria": participacao_categoria,
+            "margem_categoria_30d": margem_categoria_30d,
+            "vendas_por_dia_lucro": vendas_por_dia_lucro,
+            "cidades": cidades,
         }
 
 # === ROUTES ===
@@ -876,10 +938,10 @@ def dashboard():
     )
 
 @app.route("/api/graficos")
+@app.route("/api_graficos")
 def api_graficos():
-    ini,fim,categoria,cidade,vendedor,incluir_rma = get_filters()
-    top_metric = request.args.get("top","faturamento")
-    charts = compute_graphs(ini,fim,categoria,cidade,vendedor,incluir_rma, top_metric)
+    ini, fim, categoria, cidade, vendedor, incluir_rma = get_filters()
+    charts = compute_graphs(ini, fim, categoria, cidade, vendedor, incluir_rma)
     return jsonify(charts)
 
 @app.route("/relatorios")
