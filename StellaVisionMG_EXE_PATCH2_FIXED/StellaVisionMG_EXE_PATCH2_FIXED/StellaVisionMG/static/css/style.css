@@ -1,0 +1,38 @@
+:root{
+  --primary:#2563eb;
+  --success:#16a34a;
+  --warn:#f59e0b;
+  --danger:#dc2626;
+  --muted:#64748b;
+}
+.badge-ok{background:var(--success);}
+.badge-aten{background:var(--warn);}
+.badge-crit{background:var(--danger);}
+.card-empty{border:1px dashed var(--muted); color:var(--muted);}
+
+/*
+ * Dark mode styles
+ * Ao aplicar o tema escuro (body.bg-dark), ajustamos cores de cartões,
+ * tabelas e textos para melhor contraste. Essas regras estendem o
+ * Bootstrap sem sobrescrever completamente o tema original.
+ */
+body.bg-dark .card {
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  border-color: #444;
+}
+body.bg-dark .card-header {
+  background-color: #1f1f1f;
+  border-bottom-color: #444;
+  color: #f0f0f0;
+}
+body.bg-dark .table {
+  color: #f0f0f0;
+}
+body.bg-dark .table thead {
+  color: #f8f9fa;
+}
+body.bg-dark .table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-accent-bg: #343434;
+  color: #f0f0f0;
+}

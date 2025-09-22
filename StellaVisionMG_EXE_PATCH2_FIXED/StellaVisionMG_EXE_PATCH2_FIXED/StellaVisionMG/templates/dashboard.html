@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% from "_filters.html" import filters_bar %}
+{% block filters %}{{ filters_bar() }}{% endblock %}
+{% block content %}
+<div class="mb-3 text-end">
+  <button type="button" class="btn btn-outline-secondary theme-toggle">Modo Escuro</button>
+</div>
+<div class="row g-3">
+  {% for card in kpi_cards %}
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100 {% if card.empty %}card-empty{% endif %}">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h6 class="card-title">{{ card.title }}</h6>
+          {% if card.badge %}<span class="badge {% if card.badge=='ok' %}badge-ok{% elif card.badge=='aten' %}badge-aten{% else %}badge-crit{% endif %}">{{ card.badge }}</span>{% endif %}
+        </div>
+        <div class="display-6">{{ card.value }}</div>
+        {% if card.hint %}<div class="small mt-2"><span class="tooltip-small" title="{{ card.hint }}">Sem dados ainda — como resolver?</span></div>{% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<hr class="my-4">
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <strong>Top 10</strong>
+        <div>
+          <a href="?{{ q_toggle_top('faturamento') }}" class="btn btn-sm btn-outline-primary {% if top_metric=='faturamento' %}active{% endif %}">Faturamento</a>
+          <a href="?{{ q_toggle_top('quantidade') }}" class="btn btn-sm btn-outline-primary {% if top_metric=='quantidade' %}active{% endif %}">Quantidade</a>
+        </div>
+      </div>
+      <div class="card-body"><canvas id="chartTop10"></canvas></div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Participação por categoria</strong></div>
+      <div class="card-body"><canvas id="chartPieCategoria"></canvas></div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Margem por categoria (30d)</strong></div>
+      <div class="card-body"><canvas id="chartMargemCategoria"></canvas></div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Vendas por dia</strong></div>
+      <div class="card-body"><canvas id="chartVendasDia"></canvas></div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header"><strong>Cidades vendidas</strong></div>
+      <div class="card-body"><canvas id="chartCidades"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function fetchJSON(url){ const r = await fetch(url); return await r.json(); }
+
+(async () => {
+  // métrica atual do "Top 10" vinda do back (pode ser 'faturamento', 'quantidade' ou vazio)
+  const topMetric = "{{ top_metric or '' }}";
+
+  // ---------- Dados renderizados no servidor (lucro líquido) ----------
+  const top10LabelsLL = {{ rows|map(attribute='nome')|list|tojson }};
+  const top10ValuesLL = {{ rows|map(attribute='lucro_liquido')|list|tojson }};
+
+  // série diária (lucro líquido)
+  const vendasDiaLabels = {{ chart_labels|tojson }};
+  const vendasDiaValues = {{ chart_values|tojson }};
+
+  // sempre buscamos os demais gráficos pela API; e
+  // também usamos a API p/ Top10 quando top=faturamento|quantidade
+  const qs = {{ ('?' + request.query_string.decode())|tojson if request.query_string else '""' }};
+  const charts = await fetchJSON("{{ url_for('api_graficos') }}" + qs);
+
+  // ---------- TOP 10 ----------
+  const ctx1 = document.getElementById('chartTop10');
+  if (topMetric === 'faturamento' || topMetric === 'quantidade') {
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: charts.top10.labels,
+        datasets: [{ label: charts.top10.label, data: charts.top10.values }]
+      },
+      options: { responsive:true, plugins:{ legend:{ display:false } } }
+    });
+  } else {
+    // padrão: lucro líquido vindo do back
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: top10LabelsLL,
+        datasets: [{ label: 'Lucro líquido (R$)', data: top10ValuesLL }]
+      },
+      options: { responsive:true, plugins:{ legend:{ display:false } } }
+    });
+  }
+
+  // ---------- Vendas por dia (lucro líquido) ----------
+  const ctx4 = document.getElementById('chartVendasDia');
+  new Chart(ctx4, {
+    type: 'line',
+    data: { labels: vendasDiaLabels, datasets: [{ label: 'Lucro líquido diário (R$)', data: vendasDiaValues }] },
+    options: { responsive:true }
+  });
+
+  // ---------- Demais gráficos (API) ----------
+  const ctx2 = document.getElementById('chartPieCategoria');
+  new Chart(ctx2, {
+    type: 'pie',
+    data: { labels: charts.categoria.labels, datasets: [{ data: charts.categoria.values }] },
+    options: { responsive:true }
+  });
+
+  const ctx3 = document.getElementById('chartMargemCategoria');
+  new Chart(ctx3, {
+    type: 'bar',
+    data: { labels: charts.margem_categoria.labels, datasets: [{ label: 'Margem %', data: charts.margem_categoria.values }] },
+    options: { responsive:true, plugins:{ legend:{ display:false } } }
+  });
+
+  const ctx5 = document.getElementById('chartCidades');
+  new Chart(ctx5, {
+    type: 'bar',
+    data: { labels: charts.cidades.labels, datasets: [{ label: 'Faturamento (R$)', data: charts.cidades.values }] },
+    options: { indexAxis: 'y', responsive:true, plugins:{ legend:{ display:false } } }
+  });
+})();
+</script>
+{% endblock %}
+

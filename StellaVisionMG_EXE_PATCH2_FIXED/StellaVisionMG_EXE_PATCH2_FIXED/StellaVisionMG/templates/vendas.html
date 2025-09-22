@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="mb-3">Vendas</h4>
+<form method="post" action="/vendas">
+  <div class="row g-2">
+    <div class="col-md-3"><label class="form-label">Cliente (nome)</label><input name="cliente_nome" class="form-control" required></div>
+    <div class="col-md-2"><label class="form-label">Cidade</label><input name="cliente_cidade" class="form-control"></div>
+    <div class="col-md-2"><label class="form-label">Telefone</label><input name="cliente_telefone" class="form-control"></div>
+    <div class="col-md-3"><label class="form-label">Documento</label><input name="cliente_doc" class="form-control"></div>
+    <div class="col-md-2"><label class="form-label">Data</label><input type="date" name="data" class="form-control" required></div>
+  </div>
+  <hr>
+  <h6>Item</h6>
+  <div class="row g-2">
+    <div class="col-md-3">
+      <label class="form-label">Produto (SKU)</label>
+      <input name="product_sku" id="product_sku" class="form-control" list="product-suggestions" autocomplete="off" required>
+      <datalist id="product-suggestions"></datalist>
+    </div>
+    <div class="col-md-2"><label class="form-label">Qtde</label><input type="number" name="qtde" class="form-control" value="1"></div>
+    <div class="col-md-2"><label class="form-label">Preço aplicado (R$)</label><input type="number" step="0.01" name="preco_unit" class="form-control" required></div>
+    <div class="col-md-2"><label class="form-label">Desconto (%)</label><input type="number" step="0.01" name="desconto_pct" class="form-control" value="0"></div>
+    <div class="col-md-2"><label class="form-label">Desconto (R$)</label><input type="number" step="0.01" name="desconto_valor" class="form-control" value="0"></div>
+    <div class="col-md-1"><label class="form-label">Vend. ID</label><input type="number" name="vendedor_id" class="form-control" value="2"></div>
+    <div class="col-md-3"><label class="form-label">Motivo desconto</label><input name="motivo_desconto" class="form-control"></div>
+    <div class="col-md-2"><label class="form-label">PIN gerente (se exigir)</label><input name="pin_aprovacao" class="form-control"></div>
+  </div>
+  <button class="btn btn-primary mt-2">Lançar venda</button>
+</form>
+
+<hr>
+<h6>Últimos itens de venda</h6>
+<table class="table table-sm table-striped">
+  <thead>
+    <tr>
+      <th>ID venda</th>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Telefone</th>
+      <th>Cidade</th>
+      <th>Produto</th>
+      <th>Qtde</th>
+      <th>Preço unit. (R$)</th>
+      <th>Desc %</th>
+      <th>Desc (R$)</th>
+      <th>Vendedor</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in vendas %}
+    <tr>
+      <td>{{ s.sale_id }}</td>
+      <td>{{ s.data }}</td>
+      <td>{{ s.cliente or '-' }}</td>
+      <td>{{ s.telefone or '-' }}</td>
+      <td>{{ s.cidade or '-' }}</td>
+      <td>{{ s.produto }} ({{ s.sku }})</td>
+      <td>{{ s.qtde }}</td>
+      <td>{{ br_money(s.preco_unit) }}</td>
+      <td>{{ "{:.2f}".format(s.desconto_pct or 0) }}</td>
+      <td>{{ br_money(s.desconto_valor or 0) }}</td>
+      <td>{{ s.vendedor or '-' }}</td>
+      <td><a href="{{ url_for('venda_edit', sale_id=s.sale_id) }}" class="btn btn-sm btn-outline-secondary">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<script>
+// Autocomplete de produtos para vendas.
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('product_sku');
+  const list = document.getElementById('product-suggestions');
+  if (input && list) {
+    input.addEventListener('input', function() {
+      const q = this.value || '';
+      if (!q.trim()) {
+        list.innerHTML = '';
+        return;
+      }
+      fetch('/api/product_suggestions?q=' + encodeURIComponent(q))
+        .then(function(r) { return r.json(); })
+        .then(function(arr) {
+          list.innerHTML = '';
+          arr.forEach(function(item) {
+            const opt = document.createElement('option');
+            // o valor será o SKU, o label exibirá SKU e nome
+            opt.value = item.sku;
+            opt.label = item.label;
+            list.appendChild(opt);
+          });
+        })
+        .catch(function(err) { console.error(err); });
+    });
+  }
+});
+</script>
+{% endblock %}

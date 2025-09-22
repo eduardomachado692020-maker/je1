@@ -1,0 +1,907 @@
+------------------------------------------------------- 
+Iniciado em 20/09/2025 23:18:03,18 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [20/Sep/2025 23:18:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:05] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:05] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:05] "GET /static/img/stella_vision_logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:11] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:11] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:11] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:11] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:11] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:27] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:27] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:27] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:27] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:27] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:30] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:30] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:32] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:18:32] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:33] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:33] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:18:33] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:06] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:06] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:06] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:06] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:06] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:13] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:17] "GET /api/product_suggestions?q=X HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:18] "GET /api/product_suggestions?q=X%20 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:22] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:22] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:22] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:22] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:26] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:26] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:26] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:26] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:26] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:27] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:27] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:27] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:27] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:27] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:37] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:19:37] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:37] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:19:37] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:00] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:00] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:00] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:00] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:07] "GET /api/product_suggestions?q=X HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:08] "GET /api/product_suggestions?q=X%20 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:08] "GET /api/product_suggestions?q=X%20B HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:10] "GET /api/product_suggestions?q=XBOX-One-1TB-Preto-US-USADO-00003 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:37] "POST /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:37] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:37] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:37] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:38] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:38] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:38] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:38] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:40] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:40] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:40] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:40] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:40] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:48] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:48] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:48] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:48] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:48] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:51] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:51] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:51] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:51] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:51] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:55] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:55] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:55] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:55] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:58] "GET /vendas/22/edit HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:20:58] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:58] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:20:58] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:00] "POST /vendas/22/delete HTTP/1.1" 302 -
+127.0.0.1 - - [20/Sep/2025 23:21:00] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:00] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:00] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:00] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:01] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:01] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:01] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:03] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:03] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:03] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:03] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:03] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:04] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:04] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:04] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:04] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:04] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:09] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:21:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:21:09] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+^C------------------------------------------------------- 
+Iniciado em 20/09/2025 23:22:47,20 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [20/Sep/2025 23:22:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:22:49] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:49] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:49] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:49] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:53] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:22:53] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:53] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:53] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:53] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:22:56] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:22:56] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:56] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:56] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:22:56] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:09] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:11] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:12] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:12] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:12] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:13] "GET /compras HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:14] "GET /compras HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:15] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:15] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:15] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:15] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:16] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:16] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:16] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:16] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:17] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2025 23:51:17] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:17] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Sep/2025 23:51:17] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 16:01:12,37 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 16:01:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:01:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 16:01:37,58 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 16:01:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:01:39] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:39] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:39] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:41] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:01:41] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:41] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:41] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:41] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:01:43] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:01:43] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:43] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:43] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:01:43] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 16:05:42,74 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+[2025-09-21 16:05:44,434] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\ruthp\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruthp\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruthp\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruthp\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\app.py", line 823, in dashboard
+    kpis = compute_kpis(ini,fim,categoria,cidade,vendedor,incluir_rma)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\app.py", line 632, in compute_kpis
+    row = c.execute(sql, params).fetchone()
+          ^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: sale_items
+127.0.0.1 - - [21/Sep/2025 16:05:44] "GET / HTTP/1.1" 500 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 16:07:04,76 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 16:07:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:07:06] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:06] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:06] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:08] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:07:08] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:08] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:08] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:08] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:07:10] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:07:10] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:10] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:10] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:07:10] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:09:42] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 16:09:42] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:09:42] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 16:09:42] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:55:35] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 18:55:35] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:55:35] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:55:35] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:20] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 18:56:20] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:20] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:20] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:20] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 18:56:24] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 18:56:24] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:24] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:24] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 18:56:24] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:01:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:01:45] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:45] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:45] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:47] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:01:47] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:47] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:47] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:47] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:01:48] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:01:48] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:48] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:48] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:01:48] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:14] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:29] "GET /api/product_suggestions?q=X HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:31] "GET /api/product_suggestions?q=X%20 HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:31] "GET /api/product_suggestions?q=X%20B HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:31] "GET /api/product_suggestions?q=X%20BO HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:36] "GET /api/product_suggestions?q=X-BOX-360-LTU-SLIM-4GB-00002 HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:48] "POST /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:48] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:48] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:48] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:49] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:49] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:49] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:53] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:02:53] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:53] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:53] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:02:53] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:10] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:10] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:10] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:10] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:10] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:19] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:19] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:19] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:19] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:21] "GET /vendas/11/edit HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:21] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:21] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:21] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:25] "POST /vendas/11/delete HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:03:25] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:25] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:25] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:25] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:27] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:27] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:28] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:28] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:30] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:03:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:03:30] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:05:51] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:05:51] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:05:51] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:05:51] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:03] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:03] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:03] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:03] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:08] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:08] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:08] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:08] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:09] "GET /ajustes HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:11] "GET /config HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:11] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:11] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:11] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:12] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:12] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:12] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:12] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:21] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:21] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:21] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:21] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:21] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:27] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:06:27] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:27] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:27] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:06:27] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:07:18] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:07:18] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:07:18] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:07:18] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:07:18] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:07:58] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:07:58] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:07:58] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:07:58] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:45] "POST /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:08:45] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:45] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:45] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:58] "GET /produtos/sku/regenerar HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:08:58] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:08:58] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:58] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:08:58] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:03] "GET /produtos/sku/regenerar HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:09:03] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:09:03] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:03] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:03] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:05] "GET /produtos/sku/regenerar HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:09:05] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:09:05] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:05] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:05] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:06] "GET /produtos/sku/regenerar HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:09:06] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:09:06] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:06] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:06] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:07] "GET /produtos/sku/regenerar HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:09:07] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:09:07] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:07] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:09:07] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:10:46] "POST /produtos/31/delete HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:10:46] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:10:46] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:10:46] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:10:46] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:25] "GET /produtos/23/edit HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:14:25] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:25] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:25] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:14:40] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:40] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:40] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:49] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:14:49] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:49] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:14:49] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:13] "GET /produtos/20/edit HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:15:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:15:31] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:31] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:31] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:34] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:15:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:15:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:05] "POST /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:05] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:05] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:05] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:26] "POST /produtos/32/delete HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 19:18:26] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:26] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:26] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:26] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:27] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:27] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:27] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:27] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:29] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:29] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:29] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:30] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:18:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:18:30] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:20:50] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:20:50] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:20:50] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:20:50] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:24:24] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:24:24] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:24:24] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:24:24] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:18] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:25:18] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:18] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:18] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:18] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:25:19] "GET /dashboard?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:25:19] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:19] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:19] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:19] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:25:57] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:25:57] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:57] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:25:57] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:28:49] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:28:49] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:28:49] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:28:49] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:05] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:30:05] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:05] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:05] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:07] "GET /config HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:30:07] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:07] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:07] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:08] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:30:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:30:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:03] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:03] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:03] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:03] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:04] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:04] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:04] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:04] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:05] "GET /ajustes HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:06] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:06] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:06] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:09] "GET /config HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:12] "GET /compras HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:12] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:12] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:12] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:13] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:18] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:31:18] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:18] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:31:18] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:44:09] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 19:44:09] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:44:09] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 19:44:09] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 22:31:34,81 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 22:31:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:36] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:36] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:36] "GET /static/img/stella_vision_logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:38] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:38] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:38] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:38] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:38] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:40] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:31:40] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:40] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:40] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:31:40] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 22:41:01,11 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 22:41:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:02] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:02] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:02] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:05] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:05] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:05] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:05] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:05] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:10] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:10] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:10] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:10] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:10] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:13] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:14] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:15] "GET /ajustes HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:15] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:15] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:15] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:16] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:16] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:16] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:16] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:20] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:20] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:20] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:20] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:22] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:22] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:22] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:22] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:22] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:45] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:41:45] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:45] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:41:45] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 22:50:27,50 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 22:50:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:28] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:28] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:28] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:33] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:33] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:33] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:33] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:33] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:34] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:34] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:53] "GET /logout HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 22:50:53] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:53] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:53] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:53] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:57] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:50:57] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:57] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:50:57] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:51:04] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [21/Sep/2025 22:51:04] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:51:04] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:51:04] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:51:04] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:31] "GET /relatorios HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:31] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:31] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:31] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /compras HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:33] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /rmas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /ajustes HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /config HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:53:35] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:11] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:11] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:11] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:11] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:13] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:14] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:54] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:54:54] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:54] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:54:54] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:55:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:55:01] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:55:01] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:55:01] "GET /static/js/main.js HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 21/09/2025 22:57:20,86 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Sep/2025 22:57:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:22] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:22] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:22] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:29] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:30] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:31] "GET /vendas HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2025 22:57:32] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:32] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Sep/2025 22:57:32] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+^C------------------------------------------------------- 
+Iniciado em 22/09/2025 10:09:13,57 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [22/Sep/2025 10:09:15] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [22/Sep/2025 10:09:15] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:09:15] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:15] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:15] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:23] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:09:23] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:23] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:23] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:30] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [22/Sep/2025 10:09:31] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:09:31] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:31] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:31] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:34] "GET /dashboard?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:09:34] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:34] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:34] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:09:34] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+^C------------------------------------------------------- 
+Iniciado em 22/09/2025 10:11:15,90 
+[DEBUG] APP_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] BUNDLE_DIR: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG
+[DEBUG] DB_PATH: C:\Users\ruthp\Downloads\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG_EXE_PATCH2_FIXED\StellaVisionMG\erp.db exists? True
+[DEBUG] Templates exist?  True
+[DEBUG] Static exist?     True
+[DEBUG] APP_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+[DEBUG] BUNDLE_DIR list: ['.env.example', '.venv', 'app.py', 'build', 'build.bat', 'build_exe.py', 'dist', 'erp.db', 'init_db.py', 'README.md', 'requirements.txt', 'run_5001.log', 'seed.py', 'start_dev_clean.bat', 'start_erp.bat', 'start_erp.ps1', 'start_exe.bat', 'static', 'StellaVisionMG.spec', 'templates', '__pycache__']
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [22/Sep/2025 10:11:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:17] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:17] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:17] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:21] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:21] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:21] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:21] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:21] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:22] "GET /?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:22] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:22] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:22] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:22] "GET /api/graficos?top=quantidade HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:23] "GET /?top=faturamento HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 10:11:23] "GET /static/js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:23] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:23] "GET /static/img/stella_vision_logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 10:11:23] "GET /api/graficos?top=faturamento HTTP/1.1" 200 -
+^C

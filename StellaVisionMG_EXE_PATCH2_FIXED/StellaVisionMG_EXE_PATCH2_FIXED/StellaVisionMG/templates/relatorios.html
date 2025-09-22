@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% from "_filters.html" import filters_bar %}
+{% block filters %}{{ filters_bar() }}{% endblock %}
+{% block content %}
+<h4 class="mb-3">Relatórios</h4>
+<p class="text-muted">Mesmas métricas do Dashboard + listas operacionais.</p>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Estoque mínimo — Itens para reposição</strong></div>
+      <div class="card-body">
+        {% if reposicao %}
+          <table class="table table-sm">
+            <thead><tr><th>SKU</th><th>Produto</th><th>Estoque</th><th>Mínimo</th></tr></thead>
+            <tbody>
+            {% for r in reposicao %}
+              <tr><td>{{ r.sku }}</td><td>{{ r.nome }}</td><td>{{ r.estoque_atual }}</td><td>{{ r.estoque_minimo }}</td></tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('export_reposicao_csv') }}">Exportar CSV</a>
+        {% else %}
+          <div class="card-empty p-3">Sem dados ainda — cadastre produtos e estoques mínimos.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Produtos sem venda há {{ no_sale_days }} dias</strong></div>
+      <div class="card-body">
+        {% if sem_venda %}
+        <ul class="list-group list-group-flush">
+          {% for p in sem_venda %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              {{ p.nome }} <span class="badge bg-secondary">{{ p.dias }} dias</span>
+            </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+          <div class="card-empty p-3">Sem dados — registre vendas ou aumente a janela em Config.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header"><strong>Resumo por vendedor</strong></div>
+      <div class="card-body">
+        {% if por_vendedor %}
+        <table class="table table-sm">
+          <thead><tr><th>Vendedor</th><th>Faturamento</th><th>Margem (R$)</th><th>Ticket médio</th></tr></thead>
+          <tbody>
+            {% for row in por_vendedor %}
+              <tr>
+                <td>{{ row.nome }}</td>
+                <td>R$ {{ "{:,.2f}".format(row.faturamento).replace(",", "X").replace(".", ",").replace("X", ".") }}</td>
+                <td>R$ {{ "{:,.2f}".format(row.margem).replace(",", "X").replace(".", ",").replace("X", ".") }}</td>
+                <td>R$ {{ "{:,.2f}".format(row.ticket).replace(",", "X").replace(".", ",").replace("X", ".") }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+          <div class="card-empty p-3">Sem dados — registre vendas.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Histórico de RMAs</strong></div>
+      <div class="card-body">
+        {% if rma_hist %}
+        <table class="table table-sm">
+          <thead><tr><th>Código</th><th>Venda</th><th>Tipo</th><th>Status</th><th>Motivo</th><th>Criado</th></tr></thead>
+          <tbody>
+            {% for r in rma_hist %}
+              <tr><td>{{ r.codigo_rma }}</td><td>#{{ r.sale_id }}</td><td>{{ r.tipo }}</td><td>{{ r.status }}</td><td>{{ r.motivo }}</td><td>{{ r.created_at }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+          <div class="card-empty p-3">Sem RMAs no período.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header"><strong>Ajustes de estoque</strong></div>
+      <div class="card-body">
+        {% if ajustes_hist %}
+        <table class="table table-sm">
+          <thead><tr><th>Produto</th><th>Tipo</th><th>Δ Qtde</th><th>Antes→Depois</th><th>Motivo</th><th>Data</th></tr></thead>
+          <tbody>
+            {% for a in ajustes_hist %}
+              <tr>
+                <td>{{ a.nome }}</td>
+                <td>{{ a.ajuste_tipo }}</td>
+                <td>{{ a.qtde_delta }}</td>
+                <td>{{ a.qtde_antes }} → {{ a.qtde_depois }}</td>
+                <td>{{ a.motivo }}</td>
+                <td>{{ a.created_at }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('export_ajustes_csv') }}">Exportar CSV</a>
+        {% else %}
+          <div class="card-empty p-3">Nenhum ajuste encontrado.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

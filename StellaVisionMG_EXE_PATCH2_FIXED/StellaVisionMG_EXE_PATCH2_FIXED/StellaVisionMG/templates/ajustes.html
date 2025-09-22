@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="mb-3">Ajustes de Estoque</h4>
+<form method="post" action="/ajustes">
+  <div class="row g-2">
+    <div class="col-md-3"><label class="form-label">Produto (SKU)</label><input name="product_sku" class="form-control" required></div>
+    <div class="col-md-3"><label class="form-label">Tipo</label>
+      <select name="ajuste_tipo" class="form-select">
+        <option>ACERTO_POSITIVO</option><option>ACERTO_NEGATIVO</option><option>INVENTARIO</option>
+        <option>PERDA</option><option>QUEBRA</option><option>OUTRO</option>
+      </select>
+    </div>
+    <div class="col-md-2"><label class="form-label">Δ Qtde</label><input type="number" name="qtde_delta" class="form-control" required></div>
+    <div class="col-md-4"><label class="form-label">Motivo (obrigatório)</label><input name="motivo" class="form-control" required></div>
+  </div>
+  <button class="btn btn-primary mt-2">Lançar ajuste</button>
+</form>
+
+<hr>
+<h6>Histórico de ajustes</h6>
+<table class="table table-sm">
+  <thead><tr><th>ID</th><th>Produto</th><th>Tipo</th><th>Δ</th><th>Antes→Depois</th><th>Motivo</th><th>Data</th></tr></thead>
+  <tbody>
+  {% for a in ajustes %}
+    <tr><td>{{ a.id }}</td><td>{{ a.nome }}</td><td>{{ a.ajuste_tipo }}</td><td>{{ a.qtde_delta }}</td><td>{{ a.qtde_antes }}→{{ a.qtde_depois }}</td><td>{{ a.motivo }}</td><td>{{ a.created_at }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

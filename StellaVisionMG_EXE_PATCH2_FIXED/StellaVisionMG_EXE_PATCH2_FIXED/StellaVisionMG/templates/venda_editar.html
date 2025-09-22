@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="mb-3">Editar Venda #{{ sale.id }}</h4>
+<form method="post">
+  <div class="row g-2">
+    <div class="col-md-3">
+      <label class="form-label">Cliente (nome)</label>
+      <input name="cliente_nome" class="form-control" required value="{{ cliente.nome if cliente else '' }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Cidade</label>
+      <input name="cliente_cidade" class="form-control" value="{{ cliente.cidade if cliente else '' }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Telefone</label>
+      <input name="cliente_telefone" class="form-control" value="{{ cliente.telefone if cliente else '' }}">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Documento</label>
+      <input name="cliente_doc" class="form-control" value="{{ cliente.doc if cliente else '' }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Data</label>
+      <input type="date" name="data" class="form-control" required value="{{ sale.data }}">
+    </div>
+  </div>
+  <hr>
+  <div class="row g-2">
+    <div class="col-md-1">
+      <label class="form-label">Vend. ID</label>
+      <input type="number" name="vendedor_id" class="form-control" value="{{ sale.vendedor_id or '' }}">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Motivo desconto</label>
+      <input name="motivo_desconto" class="form-control" value="{{ sale.motivo_desconto or '' }}">
+    </div>
+  </div>
+  <hr>
+  <h6>Itens da venda</h6>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Produto (SKU)</th>
+        <th>Qtde</th>
+        <th>Preço unit. (R$)</th>
+        <th>Desc %</th>
+        <th>Desc (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for it in items %}
+      <tr>
+        <td>{{ it.sku }} - {{ it.produto }}</td>
+        <td>
+          <input type="number" name="item_{{ loop.index0 }}_qtde" class="form-control form-control-sm" value="{{ it.qtde }}">
+        </td>
+        <td>
+          <input type="number" step="0.01" name="item_{{ loop.index0 }}_preco_unit" class="form-control form-control-sm" value="{{ it.preco_unit }}">
+        </td>
+        <td>
+          <input type="number" step="0.01" name="item_{{ loop.index0 }}_desconto_pct" class="form-control form-control-sm" value="{{ it.desconto_pct or 0 }}">
+        </td>
+        <td>
+          <input type="number" step="0.01" name="item_{{ loop.index0 }}_desconto_valor" class="form-control form-control-sm" value="{{ it.desconto_valor or 0 }}">
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button class="btn btn-primary mt-2">Salvar alterações</button>
+  <a href="{{ url_for('vendas') }}" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
+<!-- Botão para excluir venda -->
+<form method="post" action="{{ url_for('venda_delete', sale_id=sale.id) }}" onsubmit="return confirm('Excluir esta venda? Esta ação é irreversível.');" style="display:inline-block">
+  <button type="submit" class="btn btn-outline-danger mt-2 ms-2">Excluir venda</button>
+</form>
+{% endblock %}

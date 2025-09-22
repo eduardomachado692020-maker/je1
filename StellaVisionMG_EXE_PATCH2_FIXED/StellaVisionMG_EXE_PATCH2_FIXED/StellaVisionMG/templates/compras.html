@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="mb-3">Compras</h4>
+<form method="post" action="/compras">
+  <div class="row g-2">
+    <div class="col-md-3"><label class="form-label">Fornecedor (nome)</label><input name="fornecedor_nome" class="form-control" required></div>
+    <div class="col-md-2"><label class="form-label">Data</label><input type="date" name="data" class="form-control" required></div>
+    <div class="col-md-2"><label class="form-label">Frete (R$)</label><input type="number" step="0.01" name="frete" class="form-control" value="0"></div>
+    <div class="col-md-2"><label class="form-label">Outras despesas (R$)</label><input type="number" step="0.01" name="outras_despesas" class="form-control" value="0"></div>
+    <div class="col-md-3"><label class="form-label">Observações</label><input name="obs" class="form-control"></div>
+  </div>
+  <hr>
+  <h6>Item</h6>
+  <div class="row g-2">
+    <div class="col-md-4"><label class="form-label">Produto (SKU)</label><input name="product_sku" class="form-control" required></div>
+    <div class="col-md-2"><label class="form-label">Qtde</label><input type="number" name="qtde" class="form-control" required value="1"></div>
+    <div class="col-md-2"><label class="form-label">Custo unitário (R$)</label><input type="number" step="0.01" name="custo_unit" class="form-control" required></div>
+  </div>
+  <button class="btn btn-primary mt-2">Lançar compra</button>
+</form>
+
+<hr>
+<h6>Últimas compras</h6>
+<table class="table table-sm">
+  <thead><tr><th>ID</th><th>Data</th><th>Fornecedor</th><th>Frete</th><th>Obs</th></tr></thead>
+  <tbody>
+  {% for c in compras %}
+    <tr><td>{{ c.id }}</td><td>{{ c.data }}</td><td>{{ c.fornecedor }}</td><td>R$ {{ "{:,.2f}".format(c.frete).replace(",", "X").replace(".", ",").replace("X", ".") }}</td><td>{{ c.obs }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

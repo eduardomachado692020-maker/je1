@@ -1,0 +1,33 @@
+{% macro filters_bar() %}
+<form class="row g-2 align-items-end mb-3" method="get">
+  <div class="col-auto">
+    <label class="form-label">Período (início)</label>
+    <input type="date" class="form-control" name="ini" value="{{ request.args.get('ini','') }}">
+  </div>
+  <div class="col-auto">
+    <label class="form-label">Período (fim)</label>
+    <input type="date" class="form-control" name="fim" value="{{ request.args.get('fim','') }}">
+  </div>
+  <div class="col-auto">
+    <label class="form-label">Categoria</label>
+    <input type="text" class="form-control" name="categoria" placeholder="(todas)" value="{{ request.args.get('categoria','') }}">
+  </div>
+  <div class="col-auto">
+    <label class="form-label">Cidade</label>
+    <input type="text" class="form-control" name="cidade" placeholder="(todas)" value="{{ request.args.get('cidade','') }}">
+  </div>
+  <div class="col-auto">
+    <label class="form-label">Vendedor (ID)</label>
+    <input type="number" class="form-control" name="vendedor" placeholder="(todos)" value="{{ request.args.get('vendedor','') }}">
+  </div>
+  <div class="col-auto form-check ms-3 mt-4">
+    {% set inc_rma = request.args.get('incluir_rma','1') %}
+    <input class="form-check-input" type="checkbox" id="incRMA" name="incluir_rma" value="1" {% if inc_rma=='1' %}checked{% endif %}>
+    <label class="form-check-label" for="incRMA">Incluir RMA</label>
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary mt-4">Aplicar</button>
+    <a class="btn btn-outline-secondary mt-4" href="{{ request.path }}">Limpar filtros</a>
+  </div>
+</form>
+{% endmacro %}
